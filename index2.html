@@ -65,9 +65,10 @@ function gaTest() {
 function jqTest() {
   ga(function(tracker) {
       var clientId = tracker.get('clientId');
-      $("#cid").val(clientId)
+      //$("#cid").val(clientId)
+      $("#cid").val(tracker.get('clientId'));
   });
-  console.log("jqTest")
+  console.log("jqTest");
   //$("#cid").val("abc")
 }  
 
