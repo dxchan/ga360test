@@ -25,6 +25,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <!-- Added to test client ID in google analytics -->
 
+ga('create', 'UA-105864453-1', 'auto');
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -34,7 +35,7 @@ function myFunction() {
     alert("I am an alert box!");
 }
 
-gtag(function(tracker) {
+ga(function(tracker) {
   var clientId = tracker.get('clientId');
   console.log("tracker")
   console.log(clientId)
