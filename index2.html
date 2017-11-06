@@ -61,6 +61,11 @@ function gaTest() {
   console.log("gaTest");
 
 }  
+  
+function jqTest() {
+  
+  $("#cid").value = clientId
+}  
 
  </script>
     
@@ -103,7 +108,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         (sample link)</a></small><br>
       </form>
       <form>
-        <input type="button" value="version" onclick="gaTest()" />
+        <input type="text" id="cid" name="cid">
+        <input type="button" value="gaTest" onclick="gaTest()" />
+        <input type="button" value="jqTest" onclick="jqTest()" />
       </form>
     </div>
   </body>
