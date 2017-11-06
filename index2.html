@@ -25,6 +25,13 @@ function myFunction() {
     alert("I am an alert box!");
 }
 
+ga(function() {
+  var trackers = ga.getAll();
+  trackers.forEach(function(tracker) {
+    console.log(tracker.get('name'));
+  });
+});  
+  
 function gaTest() {
   
     var clientId; 
