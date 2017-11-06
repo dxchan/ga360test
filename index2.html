@@ -29,7 +29,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <script type="application/javascript">
 
-ga('create', 'UA-105864453-1', 'auto');
+
   
 function myFunction() {
     alert("I am an alert box!");
@@ -47,16 +47,17 @@ function gaTest() {
     var clientId; 
   
     ga(function(tracker) {
-      console.log(tracker.get('clientId'));
-      
+      clientId = tracker.get('clientId');
+      alert(clientId)
+      console.log(clientId)
       
       
     });
   
   console.log(ga);
-  //console.log(gtag);
+
   
-  //console.log(clientId);
+  console.log(clientId);
   console.log("gaTest");
 
 }  
