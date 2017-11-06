@@ -64,11 +64,12 @@ function gaTest() {
   
 function jqTest() {
   ga(function(tracker) {
-      var clientId = tracker.get('clientId');
-      //$("#cid").val(clientId)
-      $("#cid").val(tracker.get('clientId'));
+      //var clientId = tracker.get('clientId');
+      //$("#cid").val(clientId);
+      var clientId = ga.getAll()[0].get('clientId');
+      $("#cid").val(clientId);
   });
-  console.log("jqTest");
+  //console.log("jqTest");
   //$("#cid").val("abc")
 }  
 
