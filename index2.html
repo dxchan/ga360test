@@ -20,19 +20,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script type="application/javascript">
-window.onload = function() {
-    if (window.jQuery) {  
-        // jQuery is loaded  
-        alert("Yeah!");
-    } else {
-        // jQuery is not loaded
-        alert("Doesn't Work");
-    }
-}
   
 function myFunction() {
     alert("I am an alert box!");
 }
+
+function gaTest() {
+    ga(function(tracker) {
+      var clientId = tracker.get('clientId');
+      alert(clientId);
+    });
+
+}  
+
  </script>
     
   <title>
@@ -74,7 +74,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         (sample link)</a></small><br>
       </form>
       <form>
-        <input type="button" value="version" onclick="myFunction()" />
+        <input type="button" value="version" onclick="gaTest()" />
       </form>
     </div>
   </body>
