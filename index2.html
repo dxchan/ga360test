@@ -29,7 +29,11 @@ function gaTest() {
     ga(function(tracker) {
       var clientId = tracker.get('clientId');
       alert(clientId);
+      
+      document.write("clientId");
     });
+  
+  document.write("gaTest");
 
 }  
 
