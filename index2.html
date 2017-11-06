@@ -26,13 +26,17 @@ function myFunction() {
 }
 
 function gaTest() {
+  
+    var clientId; 
+  
     ga(function(tracker) {
-      var clientId = tracker.get('clientId');
+      clientId = tracker.get('clientId');
       alert(clientId);
       
       console.log("clientId");
     });
   
+  console.log(clientId);
   console.log("gaTest");
 
 }  
