@@ -63,8 +63,12 @@ function gaTest() {
 }  
   
 function jqTest() {
-  
-  $("#cid").val("abc")
+  ga(function(tracker) {
+      var clientId = tracker.get('clientId');
+      $("#cid").val(clientId)
+  });
+  console.log("jqTest")
+  //$("#cid").val("abc")
 }  
 
  </script>
@@ -108,9 +112,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         (sample link)</a></small><br>
       </form>
       <form>
-        <input type="text" id="cid" name="cid"><br>
-        <input type="button" value="gaTest" onclick="gaTest()" /><br>
-        <input type="button" value="jqTest" onclick="jqTest()" /><br>
+        <input type="text" id="cid" name="cid"><br><br>
+        <input type="button" value="gaTest" onclick="gaTest()" /><br><br>
+        <input type="button" value="jqTest" onclick="jqTest()" /><br><br>
       </form>
     </div>
   </body>
