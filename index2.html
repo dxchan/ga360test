@@ -47,16 +47,16 @@ function gaTest() {
     var clientId; 
   
     ga(function(tracker) {
-      clientId = tracker.get('clientId');
-      alert(clientId);
+      console.log(tracker.get('clientId'));
       
-      console.log("clientId");
+      
+      
     });
   
   console.log(ga);
-  console.log(gtag);
+  //console.log(gtag);
   
-  console.log(clientId);
+  //console.log(clientId);
   console.log("gaTest");
 
 }  
