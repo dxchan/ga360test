@@ -35,8 +35,8 @@ function myFunction() {
     alert("I am an alert box!");
 }
 
-ga(function(tracker) {
-  var clientId = tracker.get('clientId');
+ga(function(){
+  var trackers = ga.getAll()
   console.log("tracker")
   console.log(clientId)
 });
@@ -46,8 +46,8 @@ function gaTest() {
   
     //var clientId; 
   
-    ga(function(tracker) {
-      console.log(tracker)
+    ga(function() {
+      var tracker = ga.getByName('t0')
       var clientId = tracker.get('clientId');
       $("#cid").val(clientId);
     });
