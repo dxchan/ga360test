@@ -44,21 +44,14 @@ ga(function(tracker) {
 
 function gaTest() {
   
-    var clientId; 
+    //var clientId; 
   
     ga(function(tracker) {
-      clientId = tracker.get('clientId');
-      alert(clientId)
-      console.log(clientId)
-      
-      
+      var clientId = tracker.get('clientId');
+      $("#cid").val(clientId);
     });
   
-  console.log(ga);
 
-  
-  console.log(clientId);
-  console.log("gaTest");
 
 }  
   
