@@ -25,7 +25,12 @@ function chkForm() {
       // check the name of the ga tracker first, it could be t0, gtm1, gtm2, etc
       var tracker = ga.getAll()[0];
       var clientId = tracker.get('clientId');
+      
+      dataLayer.push({'GA_clientId': clientId});
+      
       $("#cid").val(clientId);
+      
+      
     });
 }  
   
