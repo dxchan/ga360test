@@ -2,7 +2,7 @@
 <head>
 
 <script>
-  dataLayer = [{'event': 'submitLeadForm'}];
+  dataLayer = [];
 </script>
   
 <!-- Google Tag Manager -->
@@ -32,7 +32,8 @@ function chkForm() {
       
       console.log("clientId:" + clientId)
       
-      dataLayer.push({'GA_clientId': clientId});
+      dataLayer.push({'GA_clientId' : clientId,
+                     'event'        : 'submitLeadForm'});
       
       $("#cid").val(clientId);
       
