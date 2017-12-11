@@ -30,6 +30,8 @@ function chkForm() {
       var tracker = ga.getAll()[0];
       var clientId = tracker.get('clientId');
       
+      console.log("clientId:" + clientId)
+      
       dataLayer.push({'GA_clientId': clientId});
       
       $("#cid").val(clientId);
