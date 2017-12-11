@@ -25,7 +25,7 @@ function chkForm() {
     ga(function() {
       // It depends on how many trackers you have implemented on the site, 
       // check the name of the ga tracker first, it could be t0, gtm1, gtm2, etc
-      var tracker = ga.getByName('gtm1');
+      var tracker = ga.getAll()[0];
       var clientId = tracker.get('clientId');
       $("#cid").val(clientId);
     });
