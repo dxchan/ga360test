@@ -29,7 +29,7 @@ function submitForm() {
       var clientId = tracker.get('clientId');
       //console.log("clientId:" + clientId)
       
-      //push the glientId to custom dimension "GA_clientId", name must be the same as defined in GA
+      //push the clientId to custom dimension "GA_clientId", name must be the same as defined in GA, event name 'submitLeadForm' same as defined in GTM
       window.dataLayer.push({'GA_clientId' : clientId,
                              'event'       : 'submitLeadForm'});
       
