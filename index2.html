@@ -27,11 +27,11 @@ function submitForm() {
       // get clientId from the ga object
       var tracker = ga.getAll()[0];
       var clientId = tracker.get('clientId');
-      console.log("clientId:" + clientId)
+      //console.log("clientId:" + clientId)
       
       //push the glientId to custom dimension "GA_clientId", name must be the same as defined in GA
-      dataLayer.push({'GA_clientId' : clientId,
-                      'event'       : 'submitLeadForm'});
+      window.dataLayer.push({'GA_clientId' : clientId,
+                             'event'       : 'submitLeadForm'});
       
       // Update the hidden field to be sent to backend by JQuery, should be able to get the value by $_POST['cid'] in backend (depends on backend language)
       $("#cid").val(clientId);
