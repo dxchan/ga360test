@@ -1,6 +1,7 @@
 <html>
 <head>
 
+<!-- Initialize GTM dataLaye (move the snippet to GTM later??) -->
 <script>
   dataLayer = [];
 </script>
@@ -20,21 +21,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="application/javascript">
 
-function chkForm() {
+function submitForm() {
   
     //var clientId; 
   
     ga(function() {
-      // It depends on how many trackers you have implemented on the site, 
-      // check the name of the ga tracker first, it could be t0, gtm1, gtm2, etc
+      
+      // get clientId from the ga object
       var tracker = ga.getAll()[0];
       var clientId = tracker.get('clientId');
-      
       console.log("clientId:" + clientId)
       
+      //push the glientId to custom dimension "GA_clientId", name must be the same as defined in GA
       dataLayer.push({'GA_clientId' : clientId,
-                     'event'        : 'submitLeadForm'});
+                      'event'       : 'submitLeadForm'});
       
+      // Update the hidden field to be sent to backend by JQuery, should be able to get the value by $_POST['cid'] in backend (depends on backend language)
       $("#cid").val(clientId);
       
       
@@ -59,7 +61,7 @@ function chkForm() {
       <p><b><tt>Lead Form</tt></b></p> 
       <form>
         <input type="text" id="cid" name="cid"><br><br>
-        <input type="button" value="Submit" onclick="chkForm()" /><br><br>
+        <input type="button" value="Submit" onclick="submitForm()" /><br><br>
       </form>
     </div>
   </body>
